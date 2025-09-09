@@ -16,7 +16,7 @@
         text-align: right;
       }
 
-      #exportBtn {
+      #googleSheetsBtn {
         font-weight: bold;
         padding: 10px 20px;
         font-size: 16px;
@@ -25,9 +25,28 @@
         transition: all 0.3s ease;
       }
 
-      #exportBtn:hover {
+      #googleSheetsBtn:hover {
         transform: translateY(-2px);
         box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      }
+
+      #copyBtn {
+        transition: all 0.3s ease;
+      }
+
+      .alert {
+        border-radius: 10px;
+        border: none;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      }
+
+      code {
+        background-color: #f8f9fa;
+        padding: 8px 12px;
+        border-radius: 4px;
+        font-family: 'Courier New', monospace;
+        font-size: 14px;
+        word-break: break-all;
       }
     </style>
   </head>
@@ -35,9 +54,24 @@
     <div class="container-fluid">
       <h1 class="text-center mb-4">Honda B-Series Transmission Ratios</h1>
       <div class="text-center mb-3">
-        <button id="exportBtn" class="btn btn-success">
-          <i class="bi bi-table"></i> Save to Google Sheets
+        <button id="googleSheetsBtn" class="btn btn-success">
+          <i class="bi bi-table"></i> Import to Google Sheets
         </button>
+        <div id="instructions" class="mt-3" style="display: none;">
+          <div class="alert alert-info">
+            <h5><i class="bi bi-info-circle"></i> How to import this data into Google Sheets:</h5>
+            <ol class="text-start">
+              <li>Open <a href="https://sheets.google.com" target="_blank">Google Sheets</a></li>
+              <li>Create a new spreadsheet</li>
+              <li>In cell A1, paste this formula:</li>
+              <li><code id="formula">=IMPORTHTML("https://honda-wawa.github.io/honda_bseries_transmissions.html", "table", 1)</code></li>
+              <li>Press Enter and the data will automatically load!</li>
+            </ol>
+            <button id="copyBtn" class="btn btn-sm btn-outline-primary">
+              <i class="bi bi-clipboard"></i> Copy Formula
+            </button>
+          </div>
+        </div>
       </div>
       <div class="table-responsive">
         <table class="table table-bordered shadow rounded-3 overflow-hidden text-sm-start text-xs-start">
@@ -190,45 +224,38 @@
     </div>
 
     <script>
-      document.getElementById('exportBtn').addEventListener('click', function() {
-        // Get the table
-        const table = document.querySelector('table');
-        
-        // Create CSV content
-        let csvContent = '';
-        
-        // Get all rows
-        const rows = table.querySelectorAll('tr');
-        
-        rows.forEach(function(row) {
-          const cells = row.querySelectorAll('th, td');
-          const rowData = [];
-          
-          cells.forEach(function(cell) {
-            // Clean up the cell content and wrap in quotes if it contains commas
-            let cellContent = cell.textContent.trim();
-            if (cellContent.includes(',') || cellContent.includes('"')) {
-              cellContent = '"' + cellContent.replace(/"/g, '""') + '"';
-            }
-            rowData.push(cellContent);
-          });
-          
-          csvContent += rowData.join(',') + '\n';
-        });
-        
-        // Create and download the file
-        const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
-        const link = document.createElement('a');
-        
-        if (link.download !== undefined) {
-          const url = URL.createObjectURL(blob);
-          link.setAttribute('href', url);
-          link.setAttribute('download', 'honda_b_series_transmission_ratios.csv');
-          link.style.visibility = 'hidden';
-          document.body.appendChild(link);
-          link.click();
-          document.body.removeChild(link);
+      document.getElementById('googleSheetsBtn').addEventListener('click', function() {
+        const instructions = document.getElementById('instructions');
+        if (instructions.style.display === 'none') {
+          instructions.style.display = 'block';
+          this.innerHTML = '<i class="bi bi-arrow-up"></i> Hide Instructions';
+        } else {
+          instructions.style.display = 'none';
+          this.innerHTML = '<i class="bi bi-table"></i> Import to Google Sheets';
         }
+      });
+
+      document.getElementById('copyBtn').addEventListener('click', function() {
+        const formula = document.getElementById('formula').textContent;
+        
+        // Copy to clipboard
+        navigator.clipboard.writeText(formula).then(function() {
+          // Show success feedback
+          const originalText = this.innerHTML;
+          this.innerHTML = '<i class="bi bi-check"></i> Copied!';
+          this.classList.remove('btn-outline-primary');
+          this.classList.add('btn-success');
+          
+          // Reset after 2 seconds
+          setTimeout(() => {
+            this.innerHTML = originalText;
+            this.classList.remove('btn-success');
+            this.classList.add('btn-outline-primary');
+          }, 2000);
+        }.bind(this)).catch(function(err) {
+          console.error('Could not copy text: ', err);
+          alert('Could not copy to clipboard. Please copy manually: ' + formula);
+        });
       });
     </script>
   </body>
