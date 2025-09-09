@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Honda B-Series Transmission Ratios</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
     <style>
       body {
         font-family: 'Courier New', monospace;
@@ -14,11 +15,30 @@
       .number-cell {
         text-align: right;
       }
+
+      #exportBtn {
+        font-weight: bold;
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        transition: all 0.3s ease;
+      }
+
+      #exportBtn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      }
     </style>
   </head>
   <body class="bg-light">
     <div class="container-fluid">
       <h1 class="text-center mb-4">Honda B-Series Transmission Ratios</h1>
+      <div class="text-center mb-3">
+        <button id="exportBtn" class="btn btn-success">
+          <i class="bi bi-table"></i> Save to Google Sheets
+        </button>
+      </div>
       <div class="table-responsive">
         <table class="table table-bordered shadow rounded-3 overflow-hidden text-sm-start text-xs-start">
           <thead>
@@ -168,5 +188,48 @@
         </table>
       </div>
     </div>
+
+    <script>
+      document.getElementById('exportBtn').addEventListener('click', function() {
+        // Get the table
+        const table = document.querySelector('table');
+        
+        // Create CSV content
+        let csvContent = '';
+        
+        // Get all rows
+        const rows = table.querySelectorAll('tr');
+        
+        rows.forEach(function(row) {
+          const cells = row.querySelectorAll('th, td');
+          const rowData = [];
+          
+          cells.forEach(function(cell) {
+            // Clean up the cell content and wrap in quotes if it contains commas
+            let cellContent = cell.textContent.trim();
+            if (cellContent.includes(',') || cellContent.includes('"')) {
+              cellContent = '"' + cellContent.replace(/"/g, '""') + '"';
+            }
+            rowData.push(cellContent);
+          });
+          
+          csvContent += rowData.join(',') + '\n';
+        });
+        
+        // Create and download the file
+        const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+        const link = document.createElement('a');
+        
+        if (link.download !== undefined) {
+          const url = URL.createObjectURL(blob);
+          link.setAttribute('href', url);
+          link.setAttribute('download', 'honda_b_series_transmission_ratios.csv');
+          link.style.visibility = 'hidden';
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+        }
+      });
+    </script>
   </body>
 </html>
