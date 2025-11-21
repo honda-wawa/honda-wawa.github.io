@@ -37,6 +37,11 @@ en:
   english: "English"
   home: "Home"
   about: "About"
+  bseries_link: "B-Series Transmissions"
+  kseries_link: "K-Series Transmissions"
+  transmissions: "Transmissions"
+  bseries_description: "View detailed transmission ratios for Honda B-Series engines."
+  kseries_description: "View detailed transmission ratios for Honda K-Series engines."
   page_not_found: "Page not found :("
   page_not_found_message: "The requested page could not be found."
 
@@ -79,6 +84,11 @@ pl:
   english: "Angielski"
   home: "Strona główna"
   about: "O stronie"
+  bseries_link: "Skrzynie B-Series"
+  kseries_link: "Skrzynie K-Series"
+  transmissions: "Skrzynie biegów"
+  bseries_description: "Zobacz szczegółowe przełożenia skrzyń biegów dla silników Honda B-Series."
+  kseries_description: "Zobacz szczegółowe przełożenia skrzyń biegów dla silników Honda K-Series."
   page_not_found: "Strona nie znaleziona :("
   page_not_found_message: "Żądana strona nie została znaleziona."
 

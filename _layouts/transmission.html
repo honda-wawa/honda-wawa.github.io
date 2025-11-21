@@ -7,6 +7,7 @@
   <body class="bg-light">
     <div class="container-fluid">
       {% include language-switcher.html %}
+      {% include navigation.html %}
       <h1 class="text-center mb-4" data-translate="{% if page.data_file == 'bseries_transmissions' %}bseries_title{% else %}kseries_title{% endif %}">{{ page.title }}</h1>
       {% include google-sheets-button.html %}
       <div class="table-responsive">

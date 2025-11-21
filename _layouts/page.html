@@ -12,12 +12,7 @@
   <body class="bg-light">
     <div class="container-fluid py-4">
       {% include language-switcher.html %}
-      <nav class="mb-4">
-        <a href="/" data-translate="home">Home</a>
-        {% if page.permalink != '/about/' %}
-          | <a href="/about/" data-translate="about">About</a>
-        {% endif %}
-      </nav>
+      {% include navigation.html %}
       <main>
         {{ content }}
       </main>
