@@ -1,0 +1,39 @@
+<script>
+  const GOOGLE_SHEETS_FORMULA = '=IMPORTHTML("{{ site.url }}{{ site.baseurl }}{{ page.url }}", "table", 1)'
+
+  document.getElementById('googleSheetsBtn').addEventListener('click', () => {
+    const instructions = document.getElementById('instructions')
+    const button = document.getElementById('googleSheetsBtn')
+
+    if (instructions.style.display === 'none') {
+      instructions.style.display = 'block'
+      button.innerHTML = '<i class="bi bi-arrow-up"></i> Hide Instructions'
+    } else {
+      instructions.style.display = 'none'
+      button.innerHTML = '<i class="bi bi-table"></i> Import to Google Sheets'
+    }
+  })
+
+  document.getElementById('copyBtn').addEventListener('click', async () => {
+    const copyBtn = document.getElementById('copyBtn')
+
+    try {
+      await navigator.clipboard.writeText(GOOGLE_SHEETS_FORMULA)
+
+      const originalText = copyBtn.innerHTML
+      copyBtn.innerHTML = '<i class="bi bi-check"></i> Copied!'
+      copyBtn.classList.remove('btn-primary')
+      copyBtn.classList.add('btn-success')
+
+      setTimeout(() => {
+        copyBtn.innerHTML = originalText
+        copyBtn.classList.remove('btn-success')
+        copyBtn.classList.add('btn-primary')
+      }, 2000)
+    } catch (err) {
+      console.error('Could not copy text: ', err)
+      alert(`Could not copy to clipboard. Please copy manually: ${GOOGLE_SHEETS_FORMULA}`)
+    }
+  })
+</script>
+

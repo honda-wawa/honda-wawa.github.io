@@ -1,0 +1,80 @@
+{% if page.data_file == 'bseries_transmissions' %}
+  {% assign transmissions = site.data.bseries_transmissions %}
+  <table class="table table-bordered shadow rounded-3 overflow-hidden text-sm-start text-xs-start">
+    <thead>
+      <tr>
+        <th scope="col" class="bg-primary text-white">Year/Make</th>
+        <th scope="col" class="bg-primary text-white">Market</th>
+        <th scope="col" class="bg-primary text-white">Type</th>
+        <th scope="col" class="bg-primary text-white">Tranny Code</th>
+        <th scope="col" class="bg-primary text-white">1st Gear</th>
+        <th scope="col" class="bg-primary text-white">2nd Gear</th>
+        <th scope="col" class="bg-primary text-white">3rd Gear</th>
+        <th scope="col" class="bg-primary text-white">4th Gear</th>
+        <th scope="col" class="bg-primary text-white">5th Gear</th>
+        <th scope="col" class="bg-primary text-white">Reverse</th>
+        <th scope="col" class="bg-primary text-white">Final Drive</th>
+        <th scope="col" class="bg-primary text-white">Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for trans in transmissions %}
+      <tr>
+        <th scope="row">{{ trans.year_make }}</th>
+        <td>{{ trans.market }}</td>
+        <td>{{ trans.type }}</td>
+        <td>{{ trans.tranny_code }}</td>
+        <td class="number-cell">{{ trans.gear_1 }}</td>
+        <td class="number-cell">{{ trans.gear_2 }}</td>
+        <td class="number-cell">{{ trans.gear_3 }}</td>
+        <td class="number-cell">{{ trans.gear_4 }}</td>
+        <td class="number-cell">{{ trans.gear_5 }}</td>
+        <td class="number-cell">{{ trans.reverse }}</td>
+        <td class="number-cell">{{ trans.final_drive }}</td>
+        <td>{{ trans.notes }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% elsif page.data_file == 'kseries_transmissions' %}
+  {% assign transmissions = site.data.kseries_transmissions %}
+  <table class="table table-bordered shadow rounded-3 overflow-hidden text-sm-start text-xs-start">
+    <thead>
+      <tr>
+        <th scope="col" class="bg-primary text-white">Engine</th>
+        <th scope="col" class="bg-primary text-white">Tranny Code</th>
+        <th scope="col" class="bg-primary text-white">Chassis Code</th>
+        <th scope="col" class="bg-primary text-white">Model</th>
+        <th scope="col" class="bg-primary text-white">1st Gear</th>
+        <th scope="col" class="bg-primary text-white">2nd Gear</th>
+        <th scope="col" class="bg-primary text-white">3rd Gear</th>
+        <th scope="col" class="bg-primary text-white">4th Gear</th>
+        <th scope="col" class="bg-primary text-white">5th Gear</th>
+        <th scope="col" class="bg-primary text-white">6th Gear</th>
+        <th scope="col" class="bg-primary text-white">Reverse</th>
+        <th scope="col" class="bg-primary text-white">Final Drive</th>
+        <th scope="col" class="bg-primary text-white">LSD</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for trans in transmissions %}
+      <tr>
+        <th scope="row">{{ trans.engine }}</th>
+        <td>{{ trans.tranny_code }}</td>
+        <td>{{ trans.chassis_code }}</td>
+        <td>{{ trans.model }}</td>
+        <td class="number-cell">{{ trans.gear_1 }}</td>
+        <td class="number-cell">{{ trans.gear_2 }}</td>
+        <td class="number-cell">{{ trans.gear_3 }}</td>
+        <td class="number-cell">{{ trans.gear_4 }}</td>
+        <td class="number-cell">{{ trans.gear_5 }}</td>
+        <td class="number-cell">{% if trans.gear_6 %}{{ trans.gear_6 }}{% else %}-{% endif %}</td>
+        <td class="number-cell">{{ trans.reverse }}</td>
+        <td class="number-cell">{{ trans.final_drive }}</td>
+        <td>{{ trans.lsd }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endif %}
+
