@@ -1,11 +1,13 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" id="html-root">
   <head>
     {% include transmission-head.html %}
+    {% include language-script.html %}
   </head>
   <body class="bg-light">
     <div class="container-fluid">
-      <h1 class="text-center mb-4">{{ page.title }}</h1>
+      {% include language-switcher.html %}
+      <h1 class="text-center mb-4" data-translate="{% if page.data_file == 'bseries_transmissions' %}bseries_title{% else %}kseries_title{% endif %}">{{ page.title }}</h1>
       {% include google-sheets-button.html %}
       <div class="table-responsive">
         {% include transmission-table.html %}
