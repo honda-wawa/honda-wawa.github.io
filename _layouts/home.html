@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en" id="html-root">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ site.title }}</title>
+    <meta name="description" content="{{ site.description }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    {% include language-script.html %}
+  </head>
+  <body class="bg-light">
+    <div class="container-fluid py-4">
+      {% include language-switcher.html %}
+      <header class="text-center mb-4">
+        <h1><span data-translate="site_title">{{ site.title }}</span></h1>
+        <p class="lead"><span data-translate="site_description">{{ site.description }}</span></p>
+      </header>
+      <main>
+        {{ content }}
+      </main>
+      <footer class="mt-5 text-center text-muted">
+        <p>&copy; {{ 'now' | date: "%Y" }} <span data-translate="site_title">{{ site.title }}</span></p>
+      </footer>
+    </div>
+    {% include scripts.html %}
+  </body>
+</html>
+

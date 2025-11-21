@@ -35,6 +35,10 @@ en:
   language: "Language"
   polish: "Polish"
   english: "English"
+  home: "Home"
+  about: "About"
+  page_not_found: "Page not found :("
+  page_not_found_message: "The requested page could not be found."
 
 pl:
   site_title: "Hondowy Stuff"
@@ -73,4 +77,8 @@ pl:
   language: "Język"
   polish: "Polski"
   english: "Angielski"
+  home: "Strona główna"
+  about: "O stronie"
+  page_not_found: "Strona nie znaleziona :("
+  page_not_found_message: "Żądana strona nie została znaleziona."
 
