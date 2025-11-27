@@ -27,9 +27,9 @@ layout: home
   <div class="col-md-4 mb-4">
     <div class="card h-100">
       <div class="card-body">
-        <h3 class="card-title">Sportowa Jazda Samochodem</h3>
-        <p class="card-text">View SJS documentation.</p>
-        <a href="/docs/sjs.pdf" class="btn btn-primary" target="_blank">SJS PDF</a>
+        <h3 class="card-title" data-translate="sjs_title">Sportowa Jazda Samochodem</h3>
+        <p class="card-text" data-translate="sjs_description">View SJS book.</p>
+        <a href="/docs/sjs.pdf" class="btn btn-primary" target="_blank" data-translate="sjs_link">SJS PDF</a>
       </div>
     </div>
   </div>
@@ -39,11 +39,11 @@ layout: home
   <div class="col-md-12 mb-4">
     <div class="card h-100">
       <div class="card-body">
-        <h3 class="card-title">Catalogues</h3>
-        <p class="card-text">Browse catalogues from Auto Catalog Archive.</p>
-        <a href="https://autocatalogarchive.com/acura/" class="btn btn-primary me-2" target="_blank">Acura</a>
-        <a href="https://autocatalogarchive.com/lancia/" class="btn btn-primary me-2" target="_blank">Honda</a>
-        <a href="https://autocatalogarchive.com/index-brand/" class="btn btn-primary" target="_blank">All</a>
+        <h3 class="card-title" data-translate="catalogues_title">Catalogues</h3>
+        <p class="card-text" data-translate="catalogues_description">Browse catalogues from Auto Catalog Archive.</p>
+        <a href="https://autocatalogarchive.com/acura/" class="btn btn-primary me-2" target="_blank" data-translate="catalogues_acura">Acura</a>
+        <a href="https://autocatalogarchive.com/lancia/" class="btn btn-primary me-2" target="_blank" data-translate="catalogues_honda">Honda</a>
+        <a href="https://autocatalogarchive.com/index-brand/" class="btn btn-primary" target="_blank" data-translate="catalogues_all">All</a>
       </div>
     </div>
   </div>
