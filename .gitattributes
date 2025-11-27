@@ -1,1 +1,2 @@
 *.pdf filter=lfs diff=lfs merge=lfs -text
+docs/catalogues/*.pdf filter=lfs diff=lfs merge=lfs -text
