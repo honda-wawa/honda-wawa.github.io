@@ -52,6 +52,10 @@ en:
   catalogues_acura: "Acura"
   catalogues_honda: "Honda"
   catalogues_all: "All"
+  color_codes_title: "Honda Color Codes"
+  color_codes_link: "Honda Color Codes"
+  ek9_style_title: "Honda EK9 Style Body"
+  ek9_style_link: "Honda EK9 Style Body"
   page_not_found: "Page not found :("
   page_not_found_message: "The requested page could not be found."
 
@@ -109,6 +113,10 @@ pl:
   catalogues_acura: "Acura"
   catalogues_honda: "Honda"
   catalogues_all: "Wszystkie"
+  color_codes_title: "Kody kolorów Hondy"
+  color_codes_link: "Kody kolorów Hondy"
+  ek9_style_title: "Nadwozie Honda EK9 Style"
+  ek9_style_link: "Nadwozie Honda EK9 Style"
   page_not_found: "Strona nie znaleziona :("
   page_not_found_message: "Żądana strona nie została znaleziona."
 

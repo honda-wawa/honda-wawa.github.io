@@ -36,7 +36,7 @@ layout: home
 </div>
 
 <div class="row mt-4">
-  <div class="col-md-12 mb-4">
+  <div class="col-md-4 mb-4">
     <div class="card h-100">
       <div class="card-body">
         <h3 class="card-title" data-translate="catalogues_title">Catalogues</h3>
@@ -44,6 +44,24 @@ layout: home
         <a href="https://autocatalogarchive.com/acura/" class="btn btn-primary me-2" target="_blank" data-translate="catalogues_acura">Acura</a>
         <a href="https://autocatalogarchive.com/lancia/" class="btn btn-primary me-2" target="_blank" data-translate="catalogues_honda">Honda</a>
         <a href="https://autocatalogarchive.com/index-brand/" class="btn btn-primary" target="_blank" data-translate="catalogues_all">All</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4 mb-4">
+    <div class="card h-100">
+      <div class="card-body">
+        <h3 class="card-title" data-translate="color_codes_title">Honda Color Codes</h3>
+        <p class="card-text">&nbsp;</p>
+        <a href="https://www.paintref.com/cgi-bin/colorcodedisplay.cgi?manuf=Honda" class="btn btn-primary" target="_blank" data-translate="color_codes_link">Honda Color Codes</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4 mb-4">
+    <div class="card h-100">
+      <div class="card-body">
+        <h3 class="card-title" data-translate="ek9_style_title">Honda EK9 Style Body</h3>
+        <p class="card-text">&nbsp;</p>
+        <a href="https://www.jdmaster.net/shop/honda-civic-ek-96-98-look-type-r-style-body-parts/" class="btn btn-primary" target="_blank" data-translate="ek9_style_link">Honda EK9 Style Body</a>
       </div>
     </div>
   </div>
