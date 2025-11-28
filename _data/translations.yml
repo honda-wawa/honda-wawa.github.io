@@ -56,6 +56,9 @@ en:
   color_codes_link: "Honda Color Codes"
   ek9_style_title: "Honda EK9 Style Body"
   ek9_style_link: "Honda EK9 Style Body"
+  yes: "YES"
+  no: "NO"
+  no_lsd: "No LSD"
   page_not_found: "Page not found :("
   page_not_found_message: "The requested page could not be found."
 
@@ -117,6 +120,9 @@ pl:
   color_codes_link: "Kody kolorów Hondy"
   ek9_style_title: "Nadwozie Honda EK9 Style"
   ek9_style_link: "Nadwozie Honda EK9 Style"
+  yes: "TAK"
+  no: "NIE"
+  no_lsd: "Bez LSD"
   page_not_found: "Strona nie znaleziona :("
   page_not_found_message: "Żądana strona nie została znaleziona."
 
