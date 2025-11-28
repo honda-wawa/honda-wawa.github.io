@@ -7,13 +7,14 @@
         <th scope="col" class="bg-primary text-white" data-translate="market">Market</th>
         <th scope="col" class="bg-primary text-white" data-translate="type">Type</th>
         <th scope="col" class="bg-primary text-white" data-translate="tranny_code">Tranny Code</th>
+        <th scope="col" class="bg-primary text-white" data-translate="final_drive">Final Drive</th>
         <th scope="col" class="bg-primary text-white" data-translate="gear_1st">1st Gear</th>
         <th scope="col" class="bg-primary text-white" data-translate="gear_2nd">2nd Gear</th>
         <th scope="col" class="bg-primary text-white" data-translate="gear_3rd">3rd Gear</th>
         <th scope="col" class="bg-primary text-white" data-translate="gear_4th">4th Gear</th>
         <th scope="col" class="bg-primary text-white" data-translate="gear_5th">5th Gear</th>
+        <th scope="col" class="bg-primary text-white" data-translate="gear_6th">6th Gear</th>
         <th scope="col" class="bg-primary text-white" data-translate="reverse">Reverse</th>
-        <th scope="col" class="bg-primary text-white" data-translate="final_drive">Final Drive</th>
         <th scope="col" class="bg-primary text-white" data-translate="notes">Notes</th>
       </tr>
     </thead>
@@ -24,13 +25,14 @@
         <td>{{ trans.market }}</td>
         <td>{{ trans.type }}</td>
         <td>{{ trans.tranny_code }}</td>
+        <td class="number-cell">{{ trans.final_drive }}</td>
         <td class="number-cell">{{ trans.gear_1 }}</td>
         <td class="number-cell">{{ trans.gear_2 }}</td>
         <td class="number-cell">{{ trans.gear_3 }}</td>
         <td class="number-cell">{{ trans.gear_4 }}</td>
         <td class="number-cell">{{ trans.gear_5 }}</td>
+        <td class="number-cell">{% if trans.gear_6 %}{{ trans.gear_6 }}{% else %}-{% endif %}</td>
         <td class="number-cell">{{ trans.reverse }}</td>
-        <td class="number-cell">{{ trans.final_drive }}</td>
         <td>{{ trans.notes }}</td>
       </tr>
       {% endfor %}
@@ -45,6 +47,7 @@
         <th scope="col" class="bg-primary text-white" data-translate="tranny_code">Tranny Code</th>
         <th scope="col" class="bg-primary text-white" data-translate="chassis_code">Chassis Code</th>
         <th scope="col" class="bg-primary text-white" data-translate="model">Model</th>
+        <th scope="col" class="bg-primary text-white" data-translate="final_drive">Final Drive</th>
         <th scope="col" class="bg-primary text-white" data-translate="gear_1st">1st Gear</th>
         <th scope="col" class="bg-primary text-white" data-translate="gear_2nd">2nd Gear</th>
         <th scope="col" class="bg-primary text-white" data-translate="gear_3rd">3rd Gear</th>
@@ -52,7 +55,6 @@
         <th scope="col" class="bg-primary text-white" data-translate="gear_5th">5th Gear</th>
         <th scope="col" class="bg-primary text-white" data-translate="gear_6th">6th Gear</th>
         <th scope="col" class="bg-primary text-white" data-translate="reverse">Reverse</th>
-        <th scope="col" class="bg-primary text-white" data-translate="final_drive">Final Drive</th>
         <th scope="col" class="bg-primary text-white" data-translate="lsd">LSD</th>
       </tr>
     </thead>
@@ -63,6 +65,7 @@
         <td>{{ trans.tranny_code }}</td>
         <td>{{ trans.chassis_code }}</td>
         <td>{{ trans.model }}</td>
+        <td class="number-cell">{{ trans.final_drive }}</td>
         <td class="number-cell">{{ trans.gear_1 }}</td>
         <td class="number-cell">{{ trans.gear_2 }}</td>
         <td class="number-cell">{{ trans.gear_3 }}</td>
@@ -70,7 +73,6 @@
         <td class="number-cell">{{ trans.gear_5 }}</td>
         <td class="number-cell">{% if trans.gear_6 %}{{ trans.gear_6 }}{% else %}-{% endif %}</td>
         <td class="number-cell">{{ trans.reverse }}</td>
-        <td class="number-cell">{{ trans.final_drive }}</td>
         <td>{{ trans.lsd }}</td>
       </tr>
       {% endfor %}
