@@ -245,7 +245,7 @@
   reverse: 3.583
   final_drive: 4.389
   lsd: "NO"
-- engine: "K24A2"
+- engine: "K24A3"
   tranny_code: "AST5/GZT5"
   chassis_code: "-"
   model: "Accord 2.4 EUDM"
@@ -258,7 +258,7 @@
   reverse: 3.583
   final_drive: 4.388
   lsd: "NO"
-- engine: "K20A2"
+- engine: "K20A6/K20Z2"
   tranny_code: "Ark5"
   chassis_code: "-"
   model: "Accord 2.0 EUDM"
@@ -271,7 +271,7 @@
   reverse: 3.583
   final_drive: 4.388
   lsd: "NO"
-- engine: "K20A2"
+- engine: "K20A6/K20Z2"
   tranny_code: "Ark7"
   chassis_code: "-"
   model: "Accord 2.0 EUDM"
@@ -284,7 +284,7 @@
   reverse: 3.583
   final_drive: 4.105
   lsd: "NO"
-- engine: "K20A"
+- engine: "K20Z4"
   tranny_code: "SPWM"
   chassis_code: "FN2"
   model: "06-11 CTR UKDM/EDM/JDM (EURO). Also sold in AUS and SA"
