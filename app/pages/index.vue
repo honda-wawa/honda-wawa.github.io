@@ -11,12 +11,13 @@
       <UCard
         v-for="item in resources"
         :key="item.title"
-        class="bg-white/5 border-white/10 hover:border-red-500/50 transition-colors"
+        class="bg-white/5 border border-white/10 rounded-xl hover:border-red-500/50 hover:bg-white/8 transition-all"
+        :ui="{ body: 'p-5', header: 'p-5 pb-0' }"
       >
         <template #header>
           <h3 class="text-lg font-semibold">{{ item.title }}</h3>
         </template>
-        <p class="text-white/60 text-sm mb-4">{{ item.description }}</p>
+        <p class="text-white/50 text-sm mb-4">{{ item.description }}</p>
         <UButton
           :to="item.link"
           :target="item.external ? '_blank' : undefined"
