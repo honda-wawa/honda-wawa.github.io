@@ -57,7 +57,7 @@ const resources = [
   {
     title: 'Catalogues',
     description: 'Browse catalogues from Auto Catalog Archive.',
-    link: 'https://autocatalogarchive.com/honda/',
+    link: 'https://autocatalogarchive.com/lancia/',
     linkText: 'Browse',
     external: true,
   },
